@@ -14,7 +14,7 @@ pipeline {
                 echo 'Installing npm packages'
                 bat 'npm install'
             }
-        }
+        } 
         
         stage('Run') {
             steps {
