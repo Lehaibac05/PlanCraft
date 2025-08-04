@@ -18,7 +18,7 @@ pipeline {
         
         stage('Run') {
             steps {
-                echo 'Run application'
+                echo 'Run application' 
                 bat 'npm run dev'
             }
         }
