@@ -15,14 +15,21 @@ pipeline {
                 bat 'npm install'
             }
         }
-
-        stage('Build Docker Image') {
+        
+        stage('Run') {
             steps {
-                bat 'newgrp docker'
-                echo 'Building Docker image'
-                bat 'docker build -t plancraft .'
+                echo 'Run application'
+                bat 'npm run dev'
             }
         }
+
+        // stage('Build Docker Image') {
+        //     steps {
+        //         bat 'newgrp docker'
+        //         echo 'Building Docker image'
+        //         bat 'docker build -t plancraft .'
+        //     }
+        // }
     
         // stage('Test') {
         //     steps {
@@ -32,13 +39,13 @@ pipeline {
         //     }
         // }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application'
-                // Nếu muốn chạy container, thêm lệnh dưới:
-                bat 'docker run -d -p 3000:3000 --name plancraft_container -e DB_HOST=mysql -e DB_USER=root -e DB_PASSWORD=88888888 -e DB_NAME=plancraft plancraft'
-                // bat 'npm start'
-            }
-        } 
+        // stage('Deploy') {
+        //     steps {
+        //         echo 'Deploying application'
+        //         // Nếu muốn chạy container, thêm lệnh dưới:
+        //         bat 'docker run -d -p 3000:3000 --name plancraft_container -e DB_HOST=mysql -e DB_USER=root -e DB_PASSWORD=88888888 -e DB_NAME=plancraft plancraft'
+        //         // bat 'npm start'
+        //     }
+        // } 
     }
 }
