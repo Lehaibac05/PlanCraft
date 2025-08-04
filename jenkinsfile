@@ -22,7 +22,7 @@ pipeline {
                 bat 'npm run dev'
             }
         }
-
+//asdfasd
         // stage('Build Docker Image') {
         //     steps {
         //         bat 'newgrp docker'
