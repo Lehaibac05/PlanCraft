@@ -25,7 +25,6 @@ pipeline {
 //asdfasd
         stage('Build Docker Image') {
             steps {
-                bat 'newgrp docker'
                 echo 'Building Docker image'
                 bat 'docker build -t plantcraft .'
             }
